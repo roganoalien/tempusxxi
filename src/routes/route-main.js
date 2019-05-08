@@ -8,7 +8,7 @@ const { config } = require('../config/config-app'),
     questionModel = require('../models/model-questions');
 
 router.get('/', (req, res) => {
-    res.send('Hola');
+    res.render('sections/index');
 });
 
 module.exports = router;

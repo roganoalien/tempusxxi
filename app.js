@@ -57,8 +57,6 @@ app.use((req, res, next) => {
 ////////////////////////////
 // Public
 app.use('/public', express.static(path.join(__dirname, 'public')));
-// Vendors
-app.use('/vendors', express.static(path.join(__dirname, 'node_modules')));
 // Allows NODE to understand post requests
 app.use(bodyParser.urlencoded({ extended: true }));
 ////////////

@@ -1,0 +1,19 @@
+body{
+	background $c-black
+	color $c-white
+	font-family 'Lato', sans-serifs
+	font-size 16px
+	height 100vh
+	overflow hidden
+	width 100vw
+}
+
+.container{
+	&.full-height{
+		flex-container(center, column, center)
+		height calc(100vh - 120px)
+		.row{
+			width 100% !important
+		}
+	}
+}
