@@ -1,8 +1,17 @@
 .btn{
 	flex-container()
+	// box-shadow none !important
+	outline none !important
 	&.facebook{
 		background $c-blue
+		// border 1px solid $c-white
+		box-shadow inset 0 0 15px rgba(darken($c-blue, 0), 0)
 		color $c-white-extra
+		&:active, &:focus{
+			background darken($c-blue, 10%)
+			// border 1px solid $c-white
+			box-shadow inset 0 0 15px rgba(darken($c-blue, 60%), 1)
+		}
 		&:hover{
 			background darken($c-blue, 10%)
 		}
