@@ -17,7 +17,7 @@ const app = express();
 // DB Connection
 require('./src/config/database');
 // Passport Configuration
-// require('./src/config/passport');
+require('./src/config/passport');
 // Port Set
 app.set('port', process.env.PORT || config.localport);
 // Set Views

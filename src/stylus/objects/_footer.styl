@@ -22,7 +22,6 @@
 .main-footer{
 	flex-container()
 	height 120px
-	// transform translateX(-50%)
 	width 100vw
 	.footer-menu{
 		flex-container()
@@ -41,6 +40,8 @@
 		flex-container()
 		.invader{
 			flex-container(center, column, center)
+			opacity .5
+			transition all .15s ease-in-out
 			p{
 				font-size 13px
 				margin 0 0 10px 0
@@ -48,6 +49,9 @@
 			img{
 				height 40px
 				width auto
+			}
+			&:hover{
+				opacity .75
 			}
 		}
 	}
