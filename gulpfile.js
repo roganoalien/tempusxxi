@@ -12,7 +12,8 @@ const gulp = require('gulp'),
 const $vendors = './node_modules',
     $cssVendorsFolder = './public/css/vendors',
     $bootstrap = `${$vendors}/bootstrap/dist/css/bootstrap.css`,
-    $cssVendors = [$bootstrap];
+    $tailwind = `${$vendors}/tailwindcss/dist/tailwind.css`,
+    $cssVendors = [$bootstrap, $tailwind];
 
 ////////////////////
 // Error FUNCTION //

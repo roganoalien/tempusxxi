@@ -3,10 +3,18 @@ const express = require('express'),
 
 const { config } = require('../config/config-app'),
     userModel = require('../models/model-user'),
-    questionModel = require('../models/model-questions');
-
+    commonModel = require('../models/model-common');
+// Login View
+router.get('/login', (req, res) => {
+    res.render('admin/login');
+});
+// Register View
+router.get('/register', (req, res) => {
+    res.render('admin/register');
+});
+// Dashboard View
 router.get('/admin', (req, res) => {
-    res.send('Admin');
+    res.render('admin/dashboard');
 });
 
 module.exports = router;

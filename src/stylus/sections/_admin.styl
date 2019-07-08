@@ -1,0 +1,39 @@
+.admin-left-nav-anchor{
+	border-color transparent
+	span{
+		color $c-black
+	}
+	&:hover{
+		border-color $c-white-extra
+		span{
+			color $c-pink
+		}
+	}
+	&.active{
+		border-color $c-pink
+	}
+}
+.custom-anchor-admin{
+	color #a0aec0
+	&:hover{
+		color #a0aec0
+	}
+}
+.custom-button-admin{
+	background $c-blue
+	&:hover{
+		background darken($c-blue, 20%) !important
+	}
+}
+.custom-input-admin{
+	&:focus, &:active{
+		border 1px solid $c-orange !important
+		box-shadow 0 0 2px $c-orange
+	}
+}
+.no-underline{
+	text-decoration none !important
+}
+.text-admin-active{
+	color $c-pink
+}

@@ -6,7 +6,7 @@ const express = require('express'),
 
 const { config } = require('../config/config-app'),
     userModel = require('../models/model-user'),
-    questionModel = require('../models/model-questions');
+    commonModel = require('../models/model-common');
 
 router.get('/', (req, res) => {
     res.render('sections/index');
