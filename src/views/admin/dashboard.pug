@@ -2,9 +2,12 @@ extends ../layout-admin.pug
 
 block content
 	include ../header-nav-admin.pug
+	include ../left-nav-admin.pug
 	div(class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-16")
-		include ../left-nav-admin.pug
+		+left-menu(true, false, false)
 		div(class="w-full lg:w-4/5 p-8 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white border border-gray-400 border-rounded shadow-xl flex flex-wrap")
+			h1.title(class="w-full px-2 mb-4 text-xl font-bold uppercase text-gray-600") Dashboard
+			h2.subtitle(class="w-full px-2 mb-4 text-lg font-bold text-gray-500") Users & Shares
 			div(class="w-full sm:w-6/12 lg:w-4/12 xl:w-4/12 px-2 mb-4")
 				.border.border-gray-400.bg-white.rounded-b.flex.flex-col.justify-between.leading-normal.p-4
 					div

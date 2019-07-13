@@ -1,0 +1,71 @@
+extends ../layout-admin.pug
+
+block content
+	include ../header-nav-admin.pug
+	include ../left-nav-admin.pug
+	div(class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 my-16")
+		+left-menu(false, true, false)
+		div(class="w-full lg:w-4/5 p-8 pb-0 mt-6 lg:mt-0 text-gray-900 leading-normal bg-white border border-gray-400 border-rounded shadow-xl flex flex-wrap")
+			h1.title(class="w-full px-2 mb-4 text-xl font-bold uppercase text-gray-600") CRUD
+			h2.subtitle(class="w-full px-2 mb-4 text-lg font-bold text-gray-500") Colores
+			form.colorsForm(class="w-full mb-4 flex flex-wrap", method="POST", action="/admin/crud/colors")
+				.mb-4(class="w-4/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="monday") Monday
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="monday", id="monday", value=`${(colors) ? colors.monday : ''}`, required)
+				.mb-4(class="w-4/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="tuesday") Tuesday
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="tuesday", id="tuesday", value=`${(colors) ? colors.tuesday : ''}`, required)
+				.mb-4(class="w-4/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="wednesday") Wednesday
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="wednesday", id="wednesday", value=`${(colors) ? colors.wednesday : ''}`, required)
+				.mb-4(class="w-4/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="thursday") Thursday
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="thursday", id="thursday", value=`${(colors) ? colors.thursday : ''}`, required)
+				.mb-4(class="w-4/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="friday") Friday
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="friday", id="friday", value=`${(colors) ? colors.friday : ''}`, required)
+				.mb-4(class="w-4/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="saturday") Saturday
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="saturday", id="saturday", value=`${(colors) ? colors.saturday : ''}`, required)
+				.mb-4(class="w-4/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="sunday") Sunday
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="sunday", id="sunday", value=`${(colors) ? colors.sunday : ''}`, required)
+				.mb-4(class="w-8/12")
+				.mb-4.flex.w-12
+					button.bg-blue-500(class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline", type="submit") Guardar
+			
+			h2.subtitle(class="w-full px-2 mb-4 text-lg font-bold text-gray-500") Preguntas
+			
+			form.questionsForm(class="w-full mb-4 flex flex-wrap", method="POST", action="/admin/crud/questions")
+				.mb-4(class="w-6/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="one") Pregunta 01
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="one", id="one", value=`${(questions) ? questions.one : ''}`, required)
+				.mb-4(class="w-6/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="two") Pregunta 02
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="two", id="two", value=`${(questions) ? questions.two : ''}`, required)
+				.mb-4(class="w-6/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="three") Pregunta 03
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="three", id="three", value=`${(questions) ? questions.three : ''}`, required)
+				.mb-4(class="w-6/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="four") Pregunta 04
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="four", id="four", value=`${(questions) ? questions.four : ''}`, required)
+				.mb-4(class="w-6/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="five") Pregunta 05
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="five", id="five", value=`${(questions) ? questions.five : ''}`, required)
+				.mb-4(class="w-6/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="six") Pregunta 06
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="six", id="six", value=`${(questions) ? questions.six : ''}`, required)
+				.mb-4(class="w-6/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="seven") Pregunta 07
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="seven", id="seven", value=`${(questions) ? questions.seven : ''}`, required)
+				.mb-4(class="w-6/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="eight") Pregunta 08
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="eight", id="eight", value=`${(questions) ? questions.eight : ''}`, required)
+				.mb-4(class="w-6/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="nine") Pregunta 09
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="nine", id="nine", value=`${(questions) ? questions.nine : ''}`, required)
+				.mb-4(class="w-6/12 px-2 flex flex-wrap")
+					label(class="block text-gray-700 text-sm font-bold mb-2 w-full" for="ten") Pregunta 10
+					input(type="text", class="appearance-none border rounder w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md", name="ten", id="ten", value=`${(questions) ? questions.ten : ''}`, required)
+				.mb-2.flex.w-12
+					button.bg-blue-500(class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline", type="submit") Guardar
