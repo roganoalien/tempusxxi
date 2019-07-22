@@ -1,0 +1,27 @@
+.questions-title{
+	color $c-orange !important
+}
+
+.user-media-stuff{
+	img{
+		object-fit cover
+		height 50px
+		width 50px
+	}
+	p.small{
+		font-size 12px
+	}
+}
+
+.questions-holder{
+	.form-row{
+		flex-container()
+		width 100%
+	}
+	.q-item{
+		display none
+		&.active{
+			display block
+		}
+	}
+}

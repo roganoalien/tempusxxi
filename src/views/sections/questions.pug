@@ -6,4 +6,32 @@ block content
 			.main-logo-container.col-12.col-sm-8.col-md-5
 				img(src="/public/images/tempusxxi.svg", alt="Tempus XXI Logo")
 		.row.justify-content-center
-			.fake-card.col-12.col-sm-8.col-md-4
+			.fake-card.col-12.col-sm-8.col-md-4.justify-content-start.dynamic-height
+				if(user)
+					.media.user-media-stuff.rounded-pill.mt-4.mb-3.-ml-4
+						img.align-self-center.mr-3.rounded-circle(src=user.avatar, alt=user.name)
+						.media-body
+							p.mt-0.mb-0=user.name
+							p.small.mb-0.mt-0=user.location
+				
+				h1.questions-title.mb-2 Preguntas
+				.questions-holder
+					.question
+						.q-1.q-item.active
+							h2 ¡Hola! ¿Cómo estás?
+							.form-row.mb-4.mt-3
+								.form-check.mr-3
+									input.form-check-input(type="radio", name="q-1", id="yes-1", value="1")
+									label.form-check-label(for="yes-1") Sí
+								.form-check
+									input.form-check-input(type="radio", name="q-1", id="no-1", value="1")
+									label.form-check-label(for="no-1") No
+						.q-2.q-item
+							h2 ¡Hola! ¿Cómo estás?
+							.form-row.mb-4.mt-3
+								.form-check.mr-3
+									input.form-check-input(type="radio", name="q-2", id="yes-2", value="1")
+									label.form-check-label(for="yes-2") Sí
+								.form-check
+									input.form-check-input(type="radio", name="q-2", id="no-2", value="1")
+									label.form-check-label(for="no-2") No
