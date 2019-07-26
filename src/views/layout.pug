@@ -9,9 +9,10 @@ html(lang="es")
 		link(rel="stylesheet", href="/public/css/vendors/css-vendors.min.css")
 		link(href="https://fonts.googleapis.com/css?family=Lato:300,400,700", rel="stylesheet")
 		link(rel="stylesheet", href="/public/css/main.min.css")
-		script(src="/public/js/main.min.js")
 	body
 		include messages.pug
 		include cursor.pug
 		block content
 		include footer.pug
+		script(src="/public/js/vendors/vendors.min.js")
+		script(src="/public/js/main.min.js")

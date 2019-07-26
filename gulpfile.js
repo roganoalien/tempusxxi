@@ -11,9 +11,12 @@ const gulp = require('gulp'),
 
 const $vendors = './node_modules',
     $cssVendorsFolder = './public/css/vendors',
+    $jsVendorsFolder = './public/js/vendors',
+    $vanillaTilt = `${$vendors}/vanilla-tilt/dist/vanilla-tilt.min.js`,
     $bootstrap = `${$vendors}/bootstrap/dist/css/bootstrap.css`,
     $tailwind = `${$vendors}/tailwindcss/dist/tailwind.css`,
-    $cssVendors = [$bootstrap, $tailwind];
+    $cssVendors = [$bootstrap, $tailwind],
+    $jsVendors = [$vanillaTilt];
 
 ////////////////////
 // Error FUNCTION //
@@ -89,15 +92,16 @@ gulp.task('js', function() {
 ////////////
 // VENDORS//
 ////////////
-// gulp.task('vendors', function() {
-//     return gulp
-//         .src('./dev-js-vendors/**/*.js')
-//         .pipe(concat('vendors.min.js'))
-//         .pipe(gulp.dest('./js/vendors'))
-//         .on('end', () => {
-//             log('Vendors Concatenados', 'blue');
-//         });
-// });
+gulp.task('js-vendors', function() {
+    return gulp
+        .src($jsVendors, { base: $vendors })
+        .pipe(concat('vendors.min.js'))
+        .on('error', displayError)
+        .pipe(gulp.dest($jsVendorsFolder))
+        .on('end', () => {
+            log('Vendors Concatenados', 'blue');
+        });
+});
 //////////////
 // WATCHERS //
 //////////////
@@ -111,5 +115,11 @@ gulp.task('watchers', done => {
 
 gulp.task(
     'dev',
-    gulp.series('stylus', 'css-vendors', 'js', gulp.parallel('watchers'))
+    gulp.series(
+        'stylus',
+        'css-vendors',
+        'js',
+        'js-vendors',
+        gulp.parallel('watchers')
+    )
 );

@@ -49,6 +49,7 @@
         "gulp-stylus": "^2.7.0",
         "gulp-uglify": "^3.0.2",
         "nodemon": "^1.19.0",
-        "tailwindcss": "^1.0.4"
+        "tailwindcss": "^1.0.4",
+        "vanilla-tilt": "^1.7.0"
     }
 }
